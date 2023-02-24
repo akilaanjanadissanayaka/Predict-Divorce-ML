@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div style="display: flex;justify-content: center;justify-items: center">
+     <div class="login">
+	<h1 style="margin-bottom: 50px">Marriage Life ❤  Is Divorce in Your Future or Forever After?  </h1>
+
+         <div style="border-color: #e54f80;background: #D980FA;padding: 10px; border-radius: 12px">
+             <span>{{ prediction_text }}</span>
+         </div>
+
+
+    <form action="{{ url_for('predict')}}" method="post" style="margin-top: 50px">
+        <span>1 If one of us apologizes when our discussion deteriorates, the discussion ends.</span>
+        <br>
+        <input type="number" name="Q1" placeholder="Q 1" required="required" /><br>
+        <span>2 I know we can ignore our differences, even if things get hard sometimes.</span>
+        <br>
+        <input type="number" name="Q2" placeholder="Q 2" required="required" /><br>
+        <span>3 When we need it, we can take our discussions with my spouse from the beginning and correct it.</span>
+        <br>
+        <input type="number" name="Q3" placeholder="Q 3" required="required" /><br>
+        <span>4 When I discuss with my spouse, to contact him will eventually work.</span>
+        <br>
+        <input type="number" name="Q4" placeholder="Q 4" required="required" /><br>
+        <span>5 The time I spent with my wife is special for us.</span>
+        <br>
+        <input type="number" name="Q5" placeholder="Q 5" required="required" /><br>
+        <span>6 We don't have time at home as partners.</span>
+        <br>
+        <input type="number" name="Q6" placeholder="Q 6" required="required" /><br>
+        <span>7 We are like two strangers who share the same environment at home rather than family.</span>
+        <br>
+        <input type="number" name="Q7" placeholder="Q 7" required="required" /><br>
+        <span>8 I enjoy our holidays with my wife.</span>
+        <br>
+        <input type="number" name="Q8" placeholder="Q 8" required="required" /><br>
+        <span>9 I enjoy traveling with my wife.</span>
+        <br>
+        <input type="number" name="Q9" placeholder="Q 9" required="required" /><br>
+        <span>10 Most of our goals are common to my spouse.</span>
+        <br>
+        <input type="number" name="Q10" placeholder="Q 10" required="required" /><br>
+
+        <span>11 I think that one day in the future, when I look back, I see that my spouse and I have been in harmony with each other.</span>
+        <br>
+        <input type="number" name="Q11" placeholder="Q 11" required="required" /><br>
+        <span>12 My spouse and I have similar values in terms of personal freedom.</span>
+        <br>
+        <input type="number" name="Q12" placeholder="Q 12" required="required" /><br>
+        <span>13 My spouse and I have similar sense of entertainment.</span>
+        <br>
+        <input type="number" name="Q13" placeholder="Q 13" required="required" /><br>
+        <span>14 Most of our goals for people (children, friends, etc) are the same.</span>
+        <br>
+        <input type="number" name="Q14" placeholder="Q 14" required="required" /><br>
+        <span>15 Our dreams with my spouse are similar and harmonious.</span>
+        <br>
+        <input type="number" name="Q15" placeholder="Q 15" required="required" /><br>
+        <span>16 We're compatible with my spouse about what love should be.</span>
+        <br>
+        <input type="number" name="Q16" placeholder="Q 16" required="required" /><br>
+        <span>17 We share the same views about being happy in our life with my spouse.</span>
+        <br>
+        <input type="number" name="Q17" placeholder="Q 17" required="required" /><br>
+        <span>18 My spouse and I have similar ideas about how marriage should be.</span>
+        <br>
+        <input type="number" name="Q18" placeholder="Q 18" required="required" /><br>
+        <span>19 My spouse and I have similar ideas about how roles should be in marriage.</span>
+        <br>
+        <input type="number" name="Q19" placeholder="Q 19" required="required" /><br>
+        <span>20 My spouse and I have similar values in trust.</span>
+        <br>
+        <input type="number" name="Q20" placeholder="Q 20" required="required" /><br>
+
+        <span>21 I know exactly what my wife likes.</span>
+        <br>
+        <input type="number" name="Q21" placeholder="Q 21" required="required" /><br>
+        <span>22 I know how my spouse wants to be taken care of when she/he sick.</span>
+        <br>
+        <input type="number" name="Q22" placeholder="Q 22" required="required" /><br>
+        <span>23 I know my spouse's favorite food.</span>
+        <br>
+        <input type="number" name="Q23" placeholder="Q 23" required="required" /><br>
+        <span>24 I can tell you what kind of stress my spouse is facing in her/his life.</span>
+        <br>
+        <input type="number" name="Q24" placeholder="Q 24" required="required" /><br>
+        <span>25 I have knowledge of my spouse's inner world.</span>
+        <br>
+        <input type="number" name="Q25" placeholder="Q 25" required="required" /><br>
+        <span>26 I know my spouse's basic anxieties.</span>
+        <br>
+        <input type="number" name="Q26" placeholder="Q 26" required="required" /><br>
+        <span>27 I know what my spouse's current sources of stress are.</span>
+        <br>
+        <input type="number" name="Q27" placeholder="Q 27" required="required" /><br>
+        <span>28 I know my spouse's hopes and wishes.</span>
+        <br>
+        <input type="number" name="Q28" placeholder="Q 28" required="required" /><br>
+        <span>29 I know my spouse very well.</span>
+        <br>
+        <input type="number" name="Q29" placeholder="Q 29" required="required" /><br>
+        <span>30 I know my spouse's friends and their social relationships.</span>
+        <br>
+        <input type="number" name="Q30" placeholder="Q 30" required="required" /><br>
+
+        <span>31 I feel aggressive when I argue with my spouse.</span>
+        <br>
+        <input type="number" name="Q31" placeholder="Q 31" required="required" /><br>
+        <span>32 When discussing with my spouse, I usually use expressions such as ‘you always’ or ‘you never’ .</span>
+        <br>
+        <input type="number" name="Q32" placeholder="Q 32" required="required" /><br>
+        <span>33 I can use negative statements about my spouse's personality during our discussions.</span>
+        <br>
+        <input type="number" name="Q33" placeholder="Q 33" required="required" /><br>
+        <span>34 I can use offensive expressions during our discussions.</span>
+        <br>
+        <input type="number" name="Q34" placeholder="Q 34" required="required" /><br>
+        <span>35 I can insult my spouse during our discussions.</span>
+        <br>
+        <input type="number" name="Q35" placeholder="Q 35" required="required" /><br>
+        <span>36 I can be humiliating when we discussions.</span>
+        <br>
+        <input type="number" name="Q36" placeholder="Q 36" required="required" /><br>
+        <span>37 My discussion with my spouse is not calm.</span>
+        <br>
+        <input type="number" name="Q37" placeholder="Q 37" required="required" /><br>
+        <span>38 I hate my spouse's way of open a subject.</span>
+        <br>
+        <input type="number" name="Q38" placeholder="Q 38" required="required" /><br>
+        <span>39 Our discussions often occur suddenly.</span>
+        <br>
+        <input type="number" name="Q39" placeholder="Q 39" required="required" /><br>
+        <span>40 We're just starting a discussion before I know what's going on.</span>
+        <br>
+        <input type="number" name="Q40" placeholder="Q 40" required="required" /><br>
+
+        <span>41 When I talk to my spouse about something, my calm suddenly breaks.</span>
+        <br>
+        <input type="number" name="Q41" placeholder="Q 41" required="required" /><br>
+        <span>42 When I argue with my spouse, ı only go out and I don't say a word.</span>
+        <br>
+        <input type="number" name="Q42" placeholder="Q 42" required="required" /><br>
+        <span>43 I mostly stay silent to calm the environment a little bit.</span>
+        <br>
+        <input type="number" name="Q43" placeholder="Q 43" required="required" /><br>
+        <span>44 Sometimes I think it's good for me to leave home for a while.</span>
+        <br>
+        <input type="number" name="Q44" placeholder="Q 44" required="required" /><br>
+        <span>45 I'd rather stay silent than discuss with my spouse.</span>
+        <br>
+        <input type="number" name="Q45" placeholder="Q 45" required="required" /><br>
+        <span>46 Even if I'm right in the discussion, I stay silent to hurt my spouse.</span>
+        <br>
+        <input type="number" name="Q46" placeholder="Q 46" required="required" /><br>
+        <span>47 When I discuss with my spouse, I stay silent because I am afraid of not being able to control my anger.</span>
+        <br>
+        <input type="number" name="Q47" placeholder="Q 47" required="required" /><br>
+        <span>48 I feel right in our discussions.</span>
+        <br>
+        <input type="number" name="Q48" placeholder="Q 48" required="required" /><br>
+        <span>49 I have nothing to do with what I've been accused of.</span>
+        <br>
+        <input type="number" name="Q49" placeholder="Q 49" required="required" /><br>
+        <span>50 I'm not actually the one who's guilty about what I'm accused of.</span>
+        <br>
+        <input type="number" name="Q50" placeholder="Q 50" required="required" /><br>
+
+        <span>51 I'm not the one who's wrong about problems at home.</span>
+        <br>
+        <input type="number" name="Q51" placeholder="Q 51" required="required" /><br>
+        <span>52 I wouldn't hesitate to tell my spouse about her/his inadequacy.</span>
+        <br>
+        <input type="number" name="Q52" placeholder="Q 52" required="required" /><br>
+        <span>53 When I discuss, I remind my spouse of her/his inadequacy.</span>
+        <br>
+        <input type="number" name="Q53" placeholder="Q 53" required="required" /><br>
+        <span>54 I'm not afraid to tell my spouse about her/his incompetence.'''</span>
+        <br>
+        <input type="number" name="Q54" placeholder="Q 54" required="required" /><br>
+
+
+
+        <button type="submit" class="lovely-button">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+
+ </div>
+ </div>
+
+
+</body>
+</html>
