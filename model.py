@@ -1,16 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-import seaborn as sns
 import warnings
 import pickle
 warnings.filterwarnings("ignore")
-from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, classification_report, plot_roc_curve, confusion_matrix, ConfusionMatrixDisplay
 
 
@@ -29,9 +22,6 @@ print('Accuracy score LR:  {:.4f}' .format(accuracy_score(y_test, y_pred_lr)))
 
 
 
-# predictions = model_lr.predict([[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,4,2,0,0,0,0,0,0,0,0,1,4,2,0,4,2,1,1,0,0,0,1,0,0]])
-#
-# print(predictions)
 
 # Saving model to disk
 pickle.dump(model_lr, open('model.pkl','wb'))
