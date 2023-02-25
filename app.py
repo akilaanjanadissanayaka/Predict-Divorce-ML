@@ -23,9 +23,9 @@ def predict():
     output = round(prediction[0], 3)
     text=""
     if output==1:
-        text=" Divorce May be the Future of Your Marriage."
+        text="Happily Ever After May be in the Future of Your Marriage"
     else:
-        text=" Happily Ever After May be in the Future of Your Marriage"
+        text="  Divorce May be the Future of Your Marriage."
     print(text)
 
     return render_template('index.html', prediction_text='Based on Your Answers: {}'.format(text))
